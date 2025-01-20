@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="main_heading" , style="color: red;">Hello World</h2>
+    <button onclick="changeColor()">Change Colour</button>
+    <button onclick="toggleColor()">TOGGLE COLOR</button>
+
+    <!-- change colour of h2 to blue on button click -->
+    <script>
+        function changeColor() {
+            var mainHeading = document.getElementById('main_heading')
+            mainHeading.style.color = 'blue'
+        }
+
+        function toggleColor() {
+            var mainHeading = document.getElementById('main_heading')
+
+            if (mainHeading.style.color == 'red') {
+                mainHeading.style.color = 'blue'
+
+            }
+            else  {
+                mainHeading.style.color = 'red'
+
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
