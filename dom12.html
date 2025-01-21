@@ -1,0 +1,30 @@
+<!-- local storage -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addToLs()">Add To Local Storage</button>
+    <button onclick="getName()">GET NAME</button>
+    <button onclick="clearLs()">Clear Local Storage</button>
+    <script>
+        function addToLs(){
+           var name="Sean";
+            localStorage.setItem("firstName",name)
+            var email = "sean@gmail.com";
+            localStorage.setItem("enterEmail",email)
+        }
+        function getName(){
+            var name=localStorage.getItem('firstName')
+            alert(name)
+        }
+        function clearLs(){
+            localStorage.removeItem('firstName')
+        }
+    </script>
+</body>
+</html>
