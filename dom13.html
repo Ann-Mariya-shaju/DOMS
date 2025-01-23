@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addToLs()">ADD TO LOCAL STORAGE</button>
+    <br>
+    <br>
+    
+    <button onclick="getName()"> GET NAME</button>
+    <br>
+    <br>
+    <button onclick="clearLs()">CLEAR LOCAL STORAGE</button>
+    <br>
+    <br>
+    <button onclick="addObject()">ADD OBJECT</button>
+    <br>
+    <br>
+    <button onclick="getObject()">GET OBJECT</button>
+    
+    
+    <script>
+         function addToLs(){
+           var name="Sean";
+            sessionStorage.setItem("firstName",name)
+            var email = "sean@gmail.com";
+            sessionStorage.setItem("enterEmail",email)
+        }
+        function getName(){
+            var name=sessionStorage.getItem('firstName')
+            alert(name)
+        }
+        function clearLS(){
+            sessionStorage.removeItem('firstName')
+        }
+
+        function addObject(){
+            const userDetails={
+                firstname:'ann',
+                lastname:'shaju',
+                age:23,
+                location: 'kochi'
+       
+            }
+            sessionStorage.setItem("data",JSON.stringify(userDetails))
+        }
+         function getObject(){
+
+        //it is used to display a specific data
+         var temp=JSON.parse(sessionStorage.getItem('data'))
+         console.log(temp);
+         console.log(temp.firstname);
+         
+         
+        
+        }
+        
+        
+    </script>
+</body>
+</html>

@@ -11,6 +11,11 @@
     <button onclick="addToLs()">Add To Local Storage</button>
     <button onclick="getName()">GET NAME</button>
     <button onclick="clearLs()">Clear Local Storage</button>
+
+    <br>
+    <br>
+    <button onclick="addObject()">ADD OBJECT</button>
+    <button onclick="getObject()">GET OBJECT</button>
     <script>
         function addToLs(){
            var name="Sean";
@@ -24,6 +29,19 @@
         }
         function clearLs(){
             localStorage.removeItem('firstName')
+        }
+        function addObject(){
+            const userDetails={
+                name:'ann',
+                age:23,
+                location: 'kochi'
+       
+            }
+            localStorage.setItem("data",JSON.stringify(userDetails))
+        }
+         function getObject(){
+         console.log(localStorage.getItem("data"));
+        
         }
     </script>
 </body>
