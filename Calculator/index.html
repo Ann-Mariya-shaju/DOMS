@@ -1,39 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="https://up.yimg.com/ib/th?id=OIP.7udy4r-k9TSRRE0EuAJXAQHaHy&pid=Api&rs=1&c=1&qlt=95&w=106&h=111" type="image/x-icon">
+    <link rel="shortcut icon"
+        href="https://up.yimg.com/ib/th?id=OIP.7udy4r-k9TSRRE0EuAJXAQHaHy&pid=Api&rs=1&c=1&qlt=95&w=106&h=111"
+        type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Calculator</title>
 </head>
+
 <body>
     <div class="calculator">
-         <input type="text" id="display" readonly>
-         <br>
-         <br>
-         <button>7</button>
-         <button>8</button>
-         <button>9</button>
-         <button class="operator">+</button>
-         <br>
-         <br>
-         <button>4</button>
-         <button>5</button>
-         <button>6</button>
-         <button class="operator">-</button>
-         <br>
-         <br>
-         <button>1</button>
-         <button>2</button>
-         <button>3</button>
-         <button class="operator">*</button>
-         <br>
-         <br>
-         <button>0</button>
-         <button class="operator">/</button>
-         <button class="equal" >=</button>
-         <button class="clear" >C</button>
+        <input type="text" id="display" readonly>
+        <br>
+        <br>
+        <button onclick="appendNumber('7')">7</button>
+        <button onclick="appendNumber('8')">8</button>
+        <button onclick="appendNumber('9')">9</button>
+        <button class="operator" onclick="appendNumber('+')">+</button>
+        <br>
+        <br>
+        <button onclick="appendNumber('4')">4</button>
+        <button onclick="appendNumber('5')">5</button>
+        <button onclick="appendNumber('6')">6</button>
+        <button class="operator" onclick="appendNumber('-')">-</button>
+        <br>
+        <br>
+        <button onclick="appendNumber('1')">1</button>
+        <button onclick="appendNumber('2')">2</button>
+        <button onclick="appendNumber('3')">3</button>
+        <button onclick="appendNumber('*')" class="operator">*</button>
+        <br>
+        <br>
+        <button onclick="appendNumber('0')">0</button>
+        <button onclick="appendNumber('/')" class="operator">/</button>
+        <button class="equal" onclick="calculateResult()">=</button>
+        <button class="clearInput" onclick="clearInput()">C</button>
     </div>
+    <script>
+        function appendNumber(data) {
+            display.value = display.value + data;
+        }
+        function clearInput() {
+            display.value = "";
+        }
+        function calculateResult() {
+            var exp = display.value;
+            try {
+                
+                var result = eval(exp)
+                display.value = display.value + `=` + result;
+            }
+            catch (error) {
+                display.value = 'error'
+            }
+        }
+
+    </script>
 </body>
+
 </html>
